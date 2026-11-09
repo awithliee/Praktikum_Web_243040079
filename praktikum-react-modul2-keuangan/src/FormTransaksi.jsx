@@ -1,19 +1,18 @@
 // src/FormTransaksi.jsx
-// Formulir terkendali: setiap input terhubung ke state lewat value dan onChange
-import { useState } from 'react';
+import { useState } from "react";
 
 function FormTransaksi({ onTambah }) {
-  const [keterangan, setKeterangan] = useState('');
-  const [nominal, setNominal] = useState(''); // nilai input selalu berupa teks
-  const [jenis, setJenis] = useState('pemasukan');
+  const [keterangan, setKeterangan] = useState("");
+  const [nominal, setNominal] = useState(""); // nilai input selalu berupa teks
+  const [jenis, setJenis] = useState("pemasukan");
 
   // Validasi
   const keteranganTerlaluPanjang = keterangan.length > 40;
-  const nominalTidakValid = nominal !== '' && Number(nominal) <= 0;
+  const nominalTidakValid = nominal !== "" && Number(nominal) <= 0;
   const tidakValid =
-    keterangan.trim() === '' ||
+    keterangan.trim() === "" ||
     keteranganTerlaluPanjang ||
-    nominal === '' ||
+    nominal === "" ||
     Number(nominal) <= 0;
 
   const tanganiKirim = (event) => {
@@ -28,9 +27,9 @@ function FormTransaksi({ onTambah }) {
     });
 
     // kosongkan kembali formulir
-    setKeterangan('');
-    setNominal('');
-    setJenis('pemasukan');
+    setKeterangan("");
+    setNominal("");
+    setJenis("pemasukan");
   };
 
   return (
@@ -77,7 +76,9 @@ function FormTransaksi({ onTambah }) {
         </div>
       </div>
 
-      {nominalTidakValid && <p className="galat">Nominal harus lebih dari 0.</p>}
+      {nominalTidakValid && (
+        <p className="galat">Nominal harus lebih dari 0.</p>
+      )}
 
       <button className="tombol" type="submit" disabled={tidakValid}>
         Tambah Transaksi

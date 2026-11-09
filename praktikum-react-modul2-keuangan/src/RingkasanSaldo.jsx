@@ -1,13 +1,16 @@
 // src/RingkasanSaldo.jsx
-// Menampilkan saldo, total pemasukan, dan total pengeluaran (semua dari props)
-import { formatRupiah } from './formatRupiah';
+import { formatRupiah } from "./formatRupiah";
 
 function RingkasanSaldo({ saldo, totalMasuk, totalKeluar }) {
   return (
     <div>
       <p className="saldo-label">Saldo saat ini</p>
       {/* className dinamis: hijau jika saldo >= 0, merah jika minus */}
-      <p className={saldo >= 0 ? 'saldo-nilai pemasukan' : 'saldo-nilai pengeluaran'}>
+      <p
+        className={
+          saldo >= 0 ? "saldo-nilai pemasukan" : "saldo-nilai pengeluaran"
+        }
+      >
         {formatRupiah(saldo)}
       </p>
 

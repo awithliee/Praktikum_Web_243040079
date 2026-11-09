@@ -1,18 +1,50 @@
-/* src/App.css - gaya mobile banking (cocok untuk JSX lama maupun baru) */
-.wadah { max-width: 440px; margin: 0 auto; padding: 28px 16px 56px; }
+.wadah {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+}
 
 /* ===== Header ===== */
-.judul { margin: 0; font-size: 19px; font-weight: 800; color: #0a2e6e; }
-.subjudul { margin: 4px 0 22px; font-size: 13px; color: #6b7a90; }
-.topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
-.topbar .subjudul { margin: 2px 0 0; }
-.logo, .wadah > .judul::before {
-  width: 42px; height: 42px; border-radius: 13px;
-  display: inline-flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, #0a2e6e, #1456c8);
-  color: #ffffff; font-size: 20px; font-weight: 800;
+.judul {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  color: #0a2e6e;
 }
-.wadah > .judul::before { content: "M"; width: 38px; height: 38px; margin-right: 10px; vertical-align: middle; }
+.subjudul {
+  margin: 4px 0 22px;
+  font-size: 13px;
+  color: #6b7a90;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.topbar .subjudul {
+  margin: 2px 0 0;
+}
+.logo,
+.wadah > .judul::before {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a2e6e, #1456c8);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+}
+.wadah > .judul::before {
+  content: "M";
+  width: 38px;
+  height: 38px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
 
 /* ===== Kartu putih ===== */
 .kartu {
@@ -22,10 +54,16 @@
   margin-bottom: 18px;
   box-shadow: 0 6px 20px rgba(10, 46, 110, 0.08);
 }
-.kartu h2 { margin: 0 0 16px; font-size: 16px; font-weight: 700; color: #0a2e6e; }
+.kartu h2 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0a2e6e;
+}
 
 /* ===== Kartu saldo bergaya kartu bank ===== */
-.kartu-bank, .kartu:has(.saldo-nilai) {
+.kartu-bank,
+.kartu:has(.saldo-nilai) {
   position: relative;
   overflow: hidden;
   margin-bottom: 18px;
@@ -35,52 +73,137 @@
   background: linear-gradient(135deg, #0a2e6e 0%, #1456c8 58%, #2b8cff 100%);
   box-shadow: 0 14px 30px rgba(20, 86, 200, 0.38);
 }
-.kartu-bank::after, .kartu:has(.saldo-nilai)::after {
+.kartu-bank::after,
+.kartu:has(.saldo-nilai)::after {
   content: "";
-  position: absolute; top: -70px; right: -60px;
-  width: 210px; height: 210px; border-radius: 50%;
+  position: absolute;
+  top: -70px;
+  right: -60px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.09);
 }
 .kartu-bank::before {
   content: "";
-  position: absolute; bottom: -90px; left: -50px;
-  width: 200px; height: 200px; border-radius: 50%;
+  position: absolute;
+  bottom: -90px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
 }
-.kartu-bank > *, .kartu:has(.saldo-nilai) > * { position: relative; z-index: 1; }
-.kartu-bank-atas { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-.bank-nama { font-size: 13px; font-weight: 800; letter-spacing: 3px; }
-.chip, .kartu:has(.saldo-nilai) > h2::after {
-  display: block; width: 40px; height: 30px; border-radius: 7px;
+.kartu-bank > *,
+.kartu:has(.saldo-nilai) > * {
+  position: relative;
+  z-index: 1;
+}
+.kartu-bank-atas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.bank-nama {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+.chip,
+.kartu:has(.saldo-nilai) > h2::after {
+  display: block;
+  width: 40px;
+  height: 30px;
+  border-radius: 7px;
   background: linear-gradient(135deg, #f7e0a0, #c9a23f);
 }
 /* versi lama: judul "Ringkasan" jadi label kecil + chip emas di kanan */
 .kartu:has(.saldo-nilai) > h2 {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 24px;
-  font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   color: #ffffff;
 }
-.saldo-label { margin: 0; font-size: 13px; color: rgba(255, 255, 255, 0.78); }
-.saldo-nilai { margin: 4px 0 20px; font-size: 32px; font-weight: 800; letter-spacing: -0.5px; }
-.ringkasan-baris { display: flex; gap: 10px; }
-.ringkasan-kotak { flex: 1; padding: 11px 13px; border-radius: 14px; background: rgba(255, 255, 255, 0.15); }
-.ringkasan-kotak small { display: block; margin-bottom: 3px; font-size: 12px; color: rgba(255, 255, 255, 0.82); }
-.ringkasan-kotak strong { font-size: 15px; }
+.saldo-label {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+}
+.saldo-nilai {
+  margin: 4px 0 20px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.ringkasan-baris {
+  display: flex;
+  gap: 10px;
+}
+.ringkasan-kotak {
+  flex: 1;
+  padding: 11px 13px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.ringkasan-kotak small {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.82);
+}
+.ringkasan-kotak strong {
+  font-size: 15px;
+}
 
 /* ===== Warna: hijau pemasukan, merah pengeluaran ===== */
-.pemasukan { color: #12a150; }
-.pengeluaran { color: #d92d4a; }
-.kartu-bank .pemasukan, .kartu:has(.saldo-nilai) .pemasukan { color: #8cf5b8; }
-.kartu-bank .pengeluaran, .kartu:has(.saldo-nilai) .pengeluaran { color: #ffb3c0; }
-.kartu-bank .saldo-nilai, .kartu:has(.saldo-nilai) .saldo-nilai { color: #ffffff; }
-.kartu-bank .saldo-nilai.pengeluaran, .kartu:has(.saldo-nilai) .saldo-nilai.pengeluaran { color: #ffb3c0; }
+.pemasukan {
+  color: #12a150;
+}
+.pengeluaran {
+  color: #d92d4a;
+}
+.kartu-bank .pemasukan,
+.kartu:has(.saldo-nilai) .pemasukan {
+  color: #8cf5b8;
+}
+.kartu-bank .pengeluaran,
+.kartu:has(.saldo-nilai) .pengeluaran {
+  color: #ffb3c0;
+}
+.kartu-bank .saldo-nilai,
+.kartu:has(.saldo-nilai) .saldo-nilai {
+  color: #ffffff;
+}
+.kartu-bank .saldo-nilai.pengeluaran,
+.kartu:has(.saldo-nilai) .saldo-nilai.pengeluaran {
+  color: #ffb3c0;
+}
 
 /* ===== Formulir ===== */
-.form-grup { margin-bottom: 14px; }
-.form-grup label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; color: #6b7a90; }
-.baris { display: flex; gap: 10px; }
-.baris > * { flex: 1; min-width: 0; }
+.form-grup {
+  margin-bottom: 14px;
+}
+.form-grup label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7a90;
+}
+.baris {
+  display: flex;
+  gap: 10px;
+}
+.baris > * {
+  flex: 1;
+  min-width: 0;
+}
 .input {
   width: 100%;
   padding: 13px 14px;
@@ -91,9 +214,19 @@
   font-family: inherit;
   font-size: 15px;
 }
-.input::placeholder { color: #a3aec0; }
-.input:focus { outline: 2px solid #1456c8; outline-offset: 1px; background: #ffffff; }
-.galat { margin: 6px 0 0; font-size: 13px; color: #d92d4a; }
+.input::placeholder {
+  color: #a3aec0;
+}
+.input:focus {
+  outline: 2px solid #1456c8;
+  outline-offset: 1px;
+  background: #ffffff;
+}
+.galat {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #d92d4a;
+}
 
 .tombol {
   width: 100%;
@@ -109,35 +242,102 @@
   cursor: pointer;
   transition: background-color 0.2s;
 }
-.tombol:hover { background: #0a2e6e; }
-.tombol:disabled { background: #c5cddb; cursor: not-allowed; }
+.tombol:hover {
+  background: #0a2e6e;
+}
+.tombol:disabled {
+  background: #c5cddb;
+  cursor: not-allowed;
+}
 
 /* ===== Riwayat transaksi ===== */
-.daftar { list-style: none; margin: 0; padding: 0; }
-.item { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid #eef1f6; }
-.item:last-child { border-bottom: none; padding-bottom: 0; }
+.daftar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #eef1f6;
+}
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
 
 /* ikon bulat: elemen .ikon (JSX baru) atau pseudo-element (JSX lama) */
-.ikon, .item:not(:has(.ikon))::before {
-  width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 19px; font-weight: 800;
+.ikon,
+.item:not(:has(.ikon))::before {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  font-weight: 800;
 }
-.ikon.pemasukan, .item:not(:has(.ikon)):has(.pemasukan)::before { content: "↓"; background: #e6f6ec; color: #12a150; }
-.ikon.pengeluaran, .item:not(:has(.ikon)):has(.pengeluaran)::before { content: "↑"; background: #fdeaee; color: #d92d4a; }
+.ikon.pemasukan,
+.item:not(:has(.ikon)):has(.pemasukan)::before {
+  content: "↓";
+  background: #e6f6ec;
+  color: #12a150;
+}
+.ikon.pengeluaran,
+.item:not(:has(.ikon)):has(.pengeluaran)::before {
+  content: "↑";
+  background: #fdeaee;
+  color: #d92d4a;
+}
 
-.item-info { flex: 1; min-width: 0; }
-.item-info strong { display: block; font-size: 14px; color: #1b2a41; overflow-wrap: anywhere; }
-.item-info small { font-size: 12px; color: #6b7a90; }
-.item-nominal { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+.item-info strong {
+  display: block;
+  font-size: 14px;
+  color: #1b2a41;
+  overflow-wrap: anywhere;
+}
+.item-info small {
+  font-size: 12px;
+  color: #6b7a90;
+}
+.item-nominal {
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 /* tombol Hapus kecil & halus */
-.tombol-hapus, .item .tombol {
-  width: auto; margin: 0; padding: 5px 9px;
-  border: none; border-radius: 8px;
-  background: transparent; color: #9aa6b8;
-  font-family: inherit; font-size: 12px; font-weight: 600;
+.tombol-hapus,
+.item .tombol {
+  width: auto;
+  margin: 0;
+  padding: 5px 9px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #9aa6b8;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
 }
-.tombol-hapus:hover, .item .tombol:hover { background: #fdeaee; color: #d92d4a; }
-.kosong { margin: 0; padding: 10px 0; text-align: center; font-size: 14px; color: #6b7a90; }
+.tombol-hapus:hover,
+.item .tombol:hover {
+  background: #fdeaee;
+  color: #d92d4a;
+}
+.kosong {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7a90;
+}
